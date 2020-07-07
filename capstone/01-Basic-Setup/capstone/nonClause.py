@@ -1,7 +1,7 @@
 import nltk
 from capstone.identification import *
 
-
+nltk.download('punkt')
 def get_chunk(chunked):
     str1 = ""
     for j in range(len(chunked)):

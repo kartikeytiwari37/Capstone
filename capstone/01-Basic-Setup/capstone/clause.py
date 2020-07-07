@@ -1,4 +1,5 @@
 import nltk
+nltk.download('punkt')
 from capstone.identification import *
 from capstone.nonClause import *
 

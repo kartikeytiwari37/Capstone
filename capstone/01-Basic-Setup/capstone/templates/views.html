@@ -2,13 +2,13 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>OnNext-Account</title>
+  <title>OnNext-View</title>
   
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='account.css') }}">
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='view.css') }}">
 
   
 </head>
@@ -27,6 +27,7 @@
     <ul class="main-menu-nav">
       <li><a href="{{url_for('core.index')}}" class="orange"><i class="fa fa-home fa-fw"></i>&nbsp; Home</a></li>
       <li><a href="{{url_for('users.logout')}}" class="yellow"><i class="fa fa-book fa-fw front"></i>&nbsp; Logout</a></li>
+      <li><a href="{{url_for('users.account')}}" class="yellow"><i class="fa fa-book fa-fw front"></i>&nbsp; Account</a></li>
        <li><a href="{{url_for('blog_posts.create_post')}}" class="yellow"><i class="fa fa-book fa-fw front"></i>&nbsp; Generate Questions</a></li>
       <!-- <li><a href="#" class="green"><i class="fa fa-folder fa-fw"></i>&nbsp; Forum</a></li>
       <li><a href="#" class="purple"><i class="fa fa-envelope fa-fw"></i>&nbsp; Contact</a></li>
@@ -37,61 +38,14 @@
   </div>
 </div>
 
-<!-- 
-<section class="info">
-  <img src="https://codetheweb.blog/assets/img/icon2.png">
-  <h1>Learn HTML &mdash; <a href="https://codetheweb.blog/" target="_blank">Code The Web</a></h1>
-</section> -->
-
-<div class="container hello">
- {% set count = 1 %}
- {% for post in blog_posts  %}
-
-  <div class="card">
-    <img src="https://source.unsplash.com/7esRPTt38nI" alt="Person" class="card__image">
-    <p class="card__name">{{post.title}}</p>
-    <div class="grid-container">
-
-      <div class="grid-child-posts">
-        {{post.date.strftime("%Y-%m-%d")}}
-      </div>
-
-    
-
-    </div>
-   
-    <a href="{{url_for('blog_posts.download',filename=post.file)}}" target="blank"> <button class="btn draw-border">Download</button></a>
-    <button type="button" class="btn draw-border" data-toggle='modal' data-target="#del_modal">Delete</button>
-    <a href="{{url_for('blog_posts.view',filename=post.file)}}" target="blank"> <button class="btn draw-border">View</button></a>
-
-  </div>
-  <div class="modal" tabindex="-1" role="dialog" id="del_modal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Delete Post?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Are you sure you want to delete the post?</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-
-        <form action="{{url_for('blog_posts.delete_post',blog_post_id=post.id)}}" method="post">
-          <input class="btn btn-danger" type="submit" value="Delete">
-        </form>
-
-
-      </div>
-    </div>
-  </div>
+<div class="para">
+  <article>
+  <h1>Generated Questions</h1>
+  {%for sent in text%}
+  <p>{{sent}}</p>
+  {%endfor%}
+</article>
 </div>
-    {% endfor %}
-</div>
-
 
 
 

@@ -263,59 +263,9 @@ a {
   margin: 10px 0;
 }
 
-body {
- background: #c2e59c;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #64b3f4, #c2e59c);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #64b3f4, #c2e59c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-}
-
-.container {
-    width: 406px;
-    max-width: 406px;
-    padding-top: 100px;
-}
-
-#signup {
-    padding: 0px 25px 25px;
-    background: #fff;
-    box-shadow: 
-        0px 0px 0px 5px rgba( 255,255,255,0.4 ), 
-        0px 4px 20px rgba( 0,0,0,0.33 );
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    display: table;
-    position: static;
-}
-
-#signup .header {
-    margin-bottom: 20px;
-}
-
-#signup .header h3 {
-    color: #333333;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-#signup .header p {
-    color: #8f8f8f;
-    font-size: 14px;
-    font-weight: 300;
-}
-
-#signup .sep {
-    height: 1px;
-    background: #e8e8e8;
-    width: 406px;
-    margin: 0px -25px;
-}
-
-#signup .inputs {
-    margin-top: 25px;
-}
+/*
+*/
 
 /*#signup .inputs label {
     color: #8f8f8f;
@@ -354,7 +304,7 @@ input:-moz-placeholder {
     outline: none;   
 }*/
 
-#signup .inputs .checkboxy {
+/*#signup .inputs .checkboxy {
     display: block;
     position: static;
     height: 25px;
@@ -425,4 +375,95 @@ input:-moz-placeholder {
 }
 .fileupload{
   margin-top: 10px;
+}
+*/
+
+
+.login-container{
+    margin-top: 0%;
+    margin-bottom: 5%;
+    padding-top: 10%;
+}
+.login-logo{
+    position: relative;
+    margin-left: -41.5%;
+}
+.login-logo img{
+    position: absolute;
+    width: 20%;
+    margin-top: 19%;
+    background: #282726;
+    border-radius: 4.5rem;
+    padding: 5%;
+}
+.login-form-1{
+    padding: 9%;
+    background:#282726;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-1 h3{
+    text-align: center;
+    margin-bottom:12%;
+    color:#fff;
+}
+.login-form-2{
+    padding: 9%;
+    background: #f05837;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-2 h3{
+    text-align: center;
+    margin-bottom:12%;
+    color: #fff;
+}
+.btnSubmit{
+    font-weight: 600;
+    width: 50%;
+    color: #282726;
+    background-color: #fff;
+    border: none;
+    border-radius: 1.5rem;
+    padding:2%;
+}
+.btnForgetPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.btnForgetPwd:hover{
+    text-decoration:none;
+    color:#fff;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
+
+.hey{ 
+  display: flex;
+  width: 100%;
+  height:50%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  /*background: #131313;*/
+  background-color: rgba(0,0,0,0.5)
+  color: #fff;
+  font-size: 96px;
+  font-family: 'Fira Mono', monospace;
+  letter-spacing: -7px;
+}
+
+
+body{
+ /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f7fbfc+0,d9edf2+40,add9e4+100;Blue+3D+%231 */
+background: #f7fbfc; /* Old browsers */
+background: -moz-linear-gradient(top,  #f7fbfc 0%, #d9edf2 40%, #add9e4 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #f7fbfc 0%,#d9edf2 40%,#add9e4 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #f7fbfc 0%,#d9edf2 40%,#add9e4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7fbfc', endColorstr='#add9e4',GradientType=0 ); /* IE6-9 */
+
+
+
+}
+#hahaha{
+  color:#f05837;
 }

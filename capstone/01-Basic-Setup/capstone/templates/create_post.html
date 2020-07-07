@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='app.css') }}">
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='app2.css') }}">
 
   
 </head>
@@ -35,34 +35,34 @@
     <a href="#" class="main-menu-close"><i class="fa fa-close"></i>&nbsp; Close menu</a>
   </div>
 </div>
-<div class="container">
+<div class="hey">
+<div title="404"><span id="hahaha">Generate</span> Questions</div>
+</div>
 
-    <form id="signup" method="POST"  action="" enctype="multipart/form-data">
+<div class="container login-container">
+            <div class="row">
+                <div class="col-md-6 login-form-1">
+                  <form  method="POST"  action="" enctype="multipart/form-data">
       {{ form.hidden_tag() }}
-
-        <div class="header">
-        
-            <h3>Generate Questions</h3>
-            
-          
-            
-        </div>
-        
-        <div class="sep"></div>
-
-        <div class="inputs">
-             {% if form.title.errors %}
-              {{ form.title(class="form-control form-control-lg is-invalid",placeholder="Title") }}
+                    <h3>From File</h3>
+                    
+                        <div class="form-group">
+                          {% if form.title.errors %}
+              {{ form.title(class="form-control",placeholder="Title") }}
                     <div class="invalid-feedback">
-                      {% for error in email.title.errors %}
+                      {% for error in form.title.errors %}
                           <span>{{ error }}</span>
                       {% endfor %}
                       </div>
                     {% else %}
-                        {{ form.title(class="form-control form-control-lg",placeholder="Title") }}
+                        {{ form.title(class="form-control",placeholder="Title") }}
                 {% endif %}
-                <div class="fileupload">
-              {{form.file(class="form-control-file",placeholder="Upload text file")}}
+                            <!-- <input type="text" class="form-control" placeholder="Your Email *" value="" /> -->
+                        </div>
+                        <div class="form-group">
+
+
+                            {{form.file(class="form-control-file",placeholder="Upload text file")}}
               
 
                     {% if form.file.errors %}
@@ -72,23 +72,49 @@
 
 
                     {% endif %}
-                  </div>
+                        </div>
+                        <div class="form-group">
+                            {{ form.submit1(class="btnSubmit") }}
+                           <!--  <input type="submit" class="btnSubmit" value="Login" /> -->
+                        </div>
+                        
+                      </form>
+                    
+                </div>
+                <div class="col-md-6 login-form-2">
 
-            
-
-
-        
-        
-            
-            
-            {{ form.submit(id="submit") }}
-        
+                    <div class="login-logo">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                    </div>
+                     <form  method="POST"  action="" enctype="multipart/form-data">
+      {{ form2.hidden_tag() }}
+                    <h3>From Text</h3>
+                        <div class="form-group">
+                           {% if form2.title.errors %}
+              {{ form2.title(class="form-control",placeholder="Title") }}
+                    <div class="invalid-feedback">
+                      {% for error in form2.title.errors %}
+                          <span>{{ error }}</span>
+                      {% endfor %}
+                      </div>
+                    {% else %}
+                        {{ form2.title(class="form-control",placeholder="Title") }}
+                {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form2.text(class="form-control",placeholder="Text") }}
+                        </div>
+                        <div class="form-group">
+                           {{ form2.submit2(class="btnSubmit") }}
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
         </div>
 
-    </form>
 
-</div>
-
+<!--  -->
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
     <script src="{{ url_for('static', filename='index.js') }}"></script>

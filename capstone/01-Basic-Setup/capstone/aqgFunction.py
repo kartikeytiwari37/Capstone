@@ -1,3 +1,18 @@
+access_key='AKIAQPXCCTPJBHJDWJES'
+secret_access_key='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'
+import boto3
+import os
+client=boto3.client('s3',aws_access_key_id=access_key,
+                    aws_secret_access_key=secret_access_key)
+s3 = boto3.resource(
+    's3',
+   
+    aws_access_key_id=access_key,
+    aws_secret_access_key=secret_access_key
+)
+upload_file_bucket='chinu-dummy-bucket'
+
+
 import spacy
 from capstone.clause import *
 from capstone.nonClause import *
@@ -5,6 +20,7 @@ from capstone.aqgFunction import *
 from capstone.identification import *
 from capstone.questionValidation import *
 from capstone.nlpNER import nerTagger
+from flask import current_app
 import secrets
 
 class AutomaticQuestionGenerator():
@@ -174,11 +190,9 @@ class AutomaticQuestionGenerator():
         print("")
         print("End  OutPut")
         print("-----X-----\n\n")
-
-        output = r"C:\Users\hp\3D Objects\practice\capstone\01-Basic-Setup\capstone\static\files/"+self.filename+r".txt"
-        w = open(output, 'w+', encoding="utf8")
-        w.write(out)
-        w.close()
+        print("ssssssssssssssssssssssssssssssssssss")
+        file=self.filename+r'.txt'
+        s3.Object('chinu-dummy-bucket', file).put(Body=out)
         return 0
     
 

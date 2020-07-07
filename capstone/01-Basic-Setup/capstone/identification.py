@@ -1,5 +1,5 @@
 import nltk
-
+nltk.download('punkt')
 
 def chunk_search(segment, chunked):
     m = len(chunked)
